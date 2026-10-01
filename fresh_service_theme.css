@@ -1,0 +1,175 @@
+@media (prefers-color-scheme: light), @media(prefers-color-scheme: no-preference){
+    .fservice-system-theme{
+        /* Ticket types */
+        --greyed-out: gainsboro;
+        --greyed-out-hover: lightgrey;
+        --new: #DAF3EE;
+        --new-hover: #C9E2DD;
+        --requester-responded: #DEF0FF;
+        --requester-responded-hover: #CDE0EE;
+        --overdue: #FFE9EE;
+        --overdue-hover: #EED8DD;
+        --response-due: #FFE9EE;
+        --response-due-hover: #EED8DD;
+
+        /* Notification types */
+        --customer-response: pink;
+        --note-created: lightsalmon;
+        --unread-border: yellow;
+
+        /* Links */
+        --unvisited-link: blue;
+        --visited-link: purple;
+    }
+}
+
+@media (prefers-color-scheme: dark){
+    .fservice-system-theme{
+        /* Ticket types */
+        --greyed-out: black;
+        --greyed-out-hover: #101010;
+        --new: #00382B;
+        --new-hover: #10483B;
+        --requester-responded: #002293;
+        --requester-responded-hover: #1032A3;
+        --overdue: #611112;
+        --overdue-hover: #712122;
+        --response-due: #611112;
+        --response-due-hover: #712122;
+
+        /* Notification types */
+        --customer-response: #15213F;
+        --note-created: #3B2F25;
+
+
+        /* Links */
+        --unvisited-link: cornflowerblue;
+        --visited-link: mediumpurple;
+    }
+}
+
+.fservice-light-theme{
+    /* Ticket types */
+    --greyed-out: gainsboro;
+    --greyed-out-hover: lightgrey;
+    --new: #DAF3EE;
+    --new-hover: #C9E2DD;
+    --requester-responded: #DEF0FF;
+    --requester-responded-hover: #CDE0EE;
+    --overdue: #FFE9EE;
+    --overdue-hover: #EED8DD;
+    --response-due: #FFE9EE;
+    --response-due-hover: #EED8DD;
+
+    /* Notification types */
+    --customer-response: pink;
+    --note-created: lightsalmon;
+    --unread-border: yellow;
+
+    /* Links */
+    --unvisited-link: blue;
+    --visited-link: purple;
+}
+
+.fservice-dark-theme{
+    /* Ticket types */
+    --greyed-out: black;
+    --greyed-out-hover: #101010;
+    --new: #00382B;
+    --new-hover: #10483B;
+    --requester-responded: #002293;
+    --requester-responded-hover: #1032A3;
+    --overdue: #611112;
+    --overdue-hover: #712122;
+    --response-due: #611112;
+    --response-due-hover: #712122;
+
+    /* Notification types */
+    --customer-response: #15213F;
+    --note-created: #3B2F25;
+
+
+    /* Links */
+    --unvisited-link: cornflowerblue;
+    --visited-link: mediumpurple;
+}
+
+/* Colorize Notifications */
+
+[data-notification-type="customer_response_created"]{
+    background-color: var(--customer-response) !important;
+}
+:not(.read)[data-notification-type="customer_response_created"]{
+    border: 5px double var(--unread-border) !important;
+}
+[data-notification-type="private_note_created"],
+[data-notification-type="public_note_created"]{
+    background-color: var(--note-created) !important;
+}
+:not(.read)[data-notification-type="private_note_created"]{
+    border: 5px double var(--unread-border) !important;
+}
+
+
+/* Colorize tickets */
+
+/* Completed */
+.et-tr.greyed-out {
+    background-color: var(--greyed-out) !important;
+}
+.et-tr.greyed-out:hover > *{
+    background-color: var(--greyed-out-hover) !important;
+}
+
+/* New */
+tr:has([title="New"]){
+    background: var(--new) !important;
+}
+tr:has([title="New"]):hover > *{
+    background: var(--new-hover) !important;
+}
+
+/* Requeser responded */
+tr:has([title="Requester responded"]),
+tr:has([title="Requester responded Overdue"]){
+    background: var(--requester-responded) !important;
+}
+tr:has([title="Requester responded"]):hover > *,
+tr:has([title="Requester responded Overdue"]):hover > *{
+    background: var(--requester-responded-hover) !important;
+}
+
+/* Overdue */
+tr:has([title="Overdue"]){
+    background: var(--overdue) !important;
+}
+tr:has([title="Overdue"]):hover > *{
+    background: var(--overdue-hover) !important;
+}
+
+/* Response Due */
+tr:has([title="Response Due"]){
+    background: var(--response-due) !important;
+}
+tr:has([title="Respomse Due"]):hover > *{
+    background: var(--response-due-hover) !important;
+}
+
+/* Table borders */
+
+.et-tr.ember-view {
+    border-top: 1.5pt dotted grey !important;
+}
+
+
+/* Show which tickets have been viewed */
+.et-tr .subject-cell{
+    text-decoration-line: underline !important;
+    color: var(--unvisited-link) !important;
+}
+
+.et-tr .subject-cell:visited{
+    color: var(--visited-link) !important;
+}
+
+

@@ -1,0 +1,11 @@
+{
+    "name": "Fresh Service Improver",
+    "version": "0.1",
+    "content_scripts" : [
+        {
+            "matches": ["*://*.freshservice.com/a/tickets/*"],
+            "css": ["fresh_service_theme.css"]
+        }
+    ],
+    "manifest_version": 3
+}
